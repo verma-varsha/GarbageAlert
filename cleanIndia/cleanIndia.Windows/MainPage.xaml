@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="cleanIndia.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:cleanIndia"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox HorizontalAlignment="Left" Name="position" PlaceholderText="Email" Margin="46,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="105" Width="392"/>
+        <TextBox Name="shit" HorizontalAlignment="Left" PlaceholderText="Password" Margin="28,276,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="95" Width="410"/>
+        <Button Content="Login" HorizontalAlignment="Left"  Margin="370,498,0,0" VerticalAlignment="Top" Height="198" Width="388" Click="Button_Click"/>
+        
+    </Grid>
+</Page>

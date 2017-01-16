@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>9d60f825-a9f9-4bb9-87d7-9a5634251fba</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>cleanIndia</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Complaint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RegisterData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Class1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Registration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserAddComplaint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserHome.cs" />
+  </ItemGroup>
+</Project>
