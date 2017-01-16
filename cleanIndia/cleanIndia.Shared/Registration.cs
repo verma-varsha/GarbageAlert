@@ -48,12 +48,12 @@ namespace cleanIndia
             RegisterData holder = new RegisterData(Name, Email, Number, pass);
             string url = "http://immense-cliffs-95646.herokuapp.com/api/registration/";
             
-             register(url, holder);
+            JsonObject c=await register(url, holder);
             //test.Text = (App.Current as App).GName;
             //this.Frame(typeof(Registration));
             //Class1.PostRequestaa("http://technexuser.herokuapp.com/api/register/");
 
-            /*if((c.GetNamedNumber("status")==1))
+            if((c.GetNamedNumber("status")==1))
             {
                 (App.Current as App).GName = c.GetNamedString("name");
                 (App.Current as App).GEmail = c.GetNamedString("email");
@@ -64,13 +64,13 @@ namespace cleanIndia
             {
                 var d = new MessageDialog("Registration Failed!");
                 await d.ShowAsync();
-            }*/
+            }
            
         }
 
 
 
-        private async static Task<RegisterData> register(string url, RegisterData data)
+        private async static Task<JsonObject> register(string url, RegisterData data)
         {
             IEnumerable<KeyValuePair<string, string>> emails = new List<KeyValuePair<string, string>>()
             {
@@ -98,7 +98,7 @@ namespace cleanIndia
                         //JsonObject result = data as JsonObject;
                         JsonObject dataJson = JsonObject.Parse(mycontent);
                         Debug.WriteLine(dataJson);
-                        double Status = dataJson.GetNamedNumber("status");
+                        /*double Status = dataJson.GetNamedNumber("status");
                         string Name = dataJson.GetNamedString("name");
                         string Email = dataJson.GetNamedString("email");
                         string MobileNumber = dataJson.GetNamedString("mobileNumber");
@@ -110,8 +110,8 @@ namespace cleanIndia
 
 
                         //Debug.WriteLine(dataJson.GetNamedNumber("status"));
-                        RegisterData g = new RegisterData(Name, Email, MobileNumber, "shat");
-                        return g;
+                        RegisterData g = new RegisterData(Name, Email, MobileNumber, "shat");*/
+                        return dataJson;
                         //Debug.WriteLine(g);
                         //Debug.WriteLine(mycontent);
                     }
