@@ -145,6 +145,31 @@ namespace cleanIndia
             }
         }
 
+        private async static Task<JsonObject> openComplaintData(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage response = await client.GetAsync(url))
+                {
+                    using (HttpContent content = response.Content)
+                    {
+                        string mycontent = await content.ReadAsStringAsync();
+                        JsonObject dataJson = JsonObject.Parse(mycontent);
+                        Debug.WriteLine(dataJson);
+                        return dataJson;
+                    }
+
+
+                }
+
+
+
+
+
+
+            }
+        }
+
         public static void captureComplain()
         {
             
