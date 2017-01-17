@@ -146,6 +146,61 @@ namespace cleanIndia
             }
         }
 
+        private async static Task<JsonObject> complainHistory(string url, string email = "TextBox@g.b")
+        {
+            IEnumerable<KeyValuePair<string, string>> emails = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string,string>("email",email)
+                
+            };
+            HttpContent q = new FormUrlEncodedContent(emails);
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "x-www-form-urlencoded");
+                using (HttpResponseMessage response = await client.PostAsync(url, q))
+                {
+                    using (HttpContent content = response.Content)
+                    {
+                        string mycontent = await content.ReadAsStringAsync();
+                        JsonObject dataJson = JsonObject.Parse(mycontent);
+                        Debug.WriteLine(dataJson);
+                        return dataJson;
+                    }
+
+
+                }
+
+            }
+        }
+
+
+        private async static Task<JsonObject> login(string url, string email = "TextBox@g.b", string password = "b")
+        {
+            IEnumerable<KeyValuePair<string, string>> emails = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string,string>("email",email),
+                new KeyValuePair<string,string>("password",password)
+                
+            };
+            HttpContent q = new FormUrlEncodedContent(emails);
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "x-www-form-urlencoded");
+                using (HttpResponseMessage response = await client.PostAsync(url, q))
+                {
+                    using (HttpContent content = response.Content)
+                    {
+                        string mycontent = await content.ReadAsStringAsync();
+                        JsonObject dataJson = JsonObject.Parse(mycontent);
+                        Debug.WriteLine(dataJson);
+                        return dataJson;
+                    }
+
+
+                }
+
+            }
+        }
         
 
         public static void captureComplain()
