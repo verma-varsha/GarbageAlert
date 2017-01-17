@@ -52,6 +52,7 @@ namespace cleanIndia
             //test.Text = (App.Current as App).GName;
             //this.Frame(typeof(Registration));
             //Class1.PostRequestaa("http://technexuser.herokuapp.com/api/register/");
+            
 
             if((c.GetNamedNumber("status")==1))
             {
@@ -145,30 +146,7 @@ namespace cleanIndia
             }
         }
 
-        private async static Task<JsonObject> openComplaintData(string url)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                using (HttpResponseMessage response = await client.GetAsync(url))
-                {
-                    using (HttpContent content = response.Content)
-                    {
-                        string mycontent = await content.ReadAsStringAsync();
-                        JsonObject dataJson = JsonObject.Parse(mycontent);
-                        Debug.WriteLine(dataJson);
-                        return dataJson;
-                    }
-
-
-                }
-
-
-
-
-
-
-            }
-        }
+        
 
         public static void captureComplain()
         {

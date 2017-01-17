@@ -22,11 +22,12 @@ namespace cleanIndia
     /// </summary>
     public sealed partial class UserHome : Page
     {
-        public UserHome()
-        {
-            this.InitializeComponent();
-        }
 
-        
+
+
+        private void MapView_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(UserMapView));
+        }
     }
 }

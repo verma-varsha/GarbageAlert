@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    	<AppBarButton HorizontalAlignment="Left" Height="108" Icon="Map" Label="Show Map" Margin="158,560,0,0" VerticalAlignment="Top" Width="108"/>
+    	<AppBarButton HorizontalAlignment="Left" Height="108" Icon="Map" Click="MapView_Click" Label="Show Map" Margin="158,560,0,0" VerticalAlignment="Top" Width="108"/>
     	<AppBarButton HorizontalAlignment="Left" Height="146" Icon="Add" Click="AddComplaint_Click" Label="Add Complaint" Margin="332,564,0,0" VerticalAlignment="Top" Width="146"/>
     	<AppBarButton HorizontalAlignment="Left" Height="136" Icon="Go" Label="Logout" Margin="548,556,0,0" VerticalAlignment="Top" Width="154"/>
 

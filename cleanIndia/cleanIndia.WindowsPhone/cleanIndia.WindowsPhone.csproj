@@ -93,6 +93,9 @@
     <Compile Include="UserHome.xaml.cs">
       <DependentUpon>UserHome.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserMapView.xaml.cs">
+      <DependentUpon>UserMapView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -121,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserMapView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
