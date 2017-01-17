@@ -147,7 +147,72 @@ namespace cleanIndia
             }
         }
 
-        
+
+
+        private async static Task<JsonObject> myComplain(string url, string latitude, string longitude, string email = "TextBox@g.b")
+        {
+            IEnumerable<KeyValuePair<string, string>> emails = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string,string>("email",email),
+                new KeyValuePair<string,string>("latitude",latitude),
+                new KeyValuePair<string,string>("longitude",longitude)
+                
+            };
+            HttpContent q = new FormUrlEncodedContent(emails);
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "x-www-form-urlencoded");
+                using (HttpResponseMessage response = await client.PostAsync(url, q))
+                {
+                    using (HttpContent content = response.Content)
+                    {
+                        string mycontent = await content.ReadAsStringAsync();
+                        JsonObject dataJson = JsonObject.Parse(mycontent);
+                        Debug.WriteLine(dataJson);
+                        return dataJson;
+                    }
+
+
+                }
+
+            }
+        }
+
+        public static async Task<JsonObject> Upload(byte[] image)
+        {
+            Debug.WriteLine("code base 1");
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "multipart/form-data");
+                using (var content =
+                    new MultipartFormDataContent())//"Upload----" + DateTime.Now.ToString(CultureInfo.InvariantCulture)))
+                {
+                    content.Add(new StreamContent(new MemoryStream(image)), "bilddatei", "upload.jpg");
+
+                    IEnumerable<KeyValuePair<string, string>> emails = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string,string>("email","b@c.com"),
+                new KeyValuePair<string,string>("longitude","12"),
+                new KeyValuePair<string,string>("latitude","12"),
+                new KeyValuePair<string,string>("title","whatever"),
+                
+            };
+                    HttpContent q = new FormUrlEncodedContent(emails);
+                    content.Add(q, "data");
+                    Debug.WriteLine("code base 2");
+                    using (
+                       var message =
+                           await client.PostAsync("http://localhost:8000/api/photoComplaint/", content))
+                    {
+                        string input = await message.Content.ReadAsStringAsync();
+                        JsonObject dataJson = JsonObject.Parse(input);
+                        Debug.WriteLine(dataJson.GetNamedString("status"));
+
+                        return dataJson;
+                    }
+                }
+            }
+        }
 
 
         
