@@ -105,6 +105,18 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AgencyHome.xaml.cs">
+      <DependentUpon>AgencyHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AgencyLogin.xaml.cs">
+      <DependentUpon>AgencyLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AgencyMapView.xaml.cs">
+      <DependentUpon>AgencyMapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AgencyReg.xaml.cs">
+      <DependentUpon>AgencyReg.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
@@ -142,6 +154,22 @@
     <Content Include="Assets\StoreLogo.scale-100.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="AgencyHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AgencyLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AgencyMapView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AgencyReg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

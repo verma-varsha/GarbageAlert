@@ -9,7 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="67,145,0,0" VerticalAlignment="Top" Height="133" Width="154" Click="Button_Click"/>
-        
+        <Button Content="Login" HorizontalAlignment="Left" Margin="131,339,0,0" VerticalAlignment="Top" Height="133" Width="154" Click="LoginButton_Click"/>
+        <TextBox x:Name="email" HorizontalAlignment="Left" Height="43" Margin="72,180,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="290"/>
+        <HyperlinkButton Click="HyperlinkButton_Click" Content="Create Account" HorizontalAlignment="Left" Height="57" Margin="100,527,0,0" VerticalAlignment="Top" Width="221"/>
+        <PasswordBox x:Name="pass" HorizontalAlignment="Left" Height="42" Margin="72,257,0,0" VerticalAlignment="Top" Width="290"/>
+        <HyperlinkButton Click="AgencyLink_Click" Content="Agency? Click here." HorizontalAlignment="Left" Height="109" Margin="100,10,0,0" VerticalAlignment="Top" Width="262"/>
+
     </Grid>
 </Page>

@@ -1,65 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using System.Diagnostics;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+using Windows.Data.Json;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using Windows.Data.Json;
-using System.Runtime.Serialization;
-using System.Net.Http;
-using System.Diagnostics;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using Windows.UI.Popups;
-using System.Globalization;
-using System.Text.RegularExpressions;
-using Windows.UI.Xaml.Media.Imaging;
-using Windows.Media.Capture;
-using Windows.Storage;
-using Windows.Storage.AccessCache;
-using Windows.Storage.Streams;
-using Windows.UI.Xaml.Media.Imaging;
-
-//using SDKTemplate;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Text;
 
 namespace cleanIndia
 {
-    sealed partial class Registration : Page
+    public sealed partial class AgencyReg:Page
     {
-        
-        private async void RegisterButton_Click(object sender, RoutedEventArgs e)
+        private async void AgencyReg_Click(object sender, RoutedEventArgs e)
         {
-            
             string Name = uname.Text;
             string Email = email.Text;
             string Number = phone.Text;
             string pass = password.Password;
             RegisterData holder = new RegisterData(Name, Email, Number, pass);
             string url = "http://immense-cliffs-95646.herokuapp.com/api/registration/";
-            
-            JsonObject c=await register(url, holder, "0");
+
+            JsonObject c = await register(url, holder, "1");
             //test.Text = (App.Current as App).GName;
             //this.Frame(typeof(Registration));
             //Class1.PostRequestaa("http://technexuser.herokuapp.com/api/register/");
-            
 
-            if((c.GetNamedNumber("status")==1))
+
+            if ((c.GetNamedNumber("status") == 1))
             {
                 (App.Current as App).GName = c.GetNamedString("name");
                 (App.Current as App).GEmail = c.GetNamedString("email");
                 (App.Current as App).GPhone = c.GetNamedString("mobileNumber");
-                this.Frame.Navigate(typeof(UserHome));
+                this.Frame.Navigate(typeof(AgencyHome));
             }
             else
             {
@@ -68,9 +43,6 @@ namespace cleanIndia
             }
            
         }
-
-
-
         private async static Task<JsonObject> register(string url, RegisterData data, string userType)
         {
             IEnumerable<KeyValuePair<string, string>> emails = new List<KeyValuePair<string, string>>()
@@ -120,43 +92,11 @@ namespace cleanIndia
 
 
                 }
-               
+
             }
-            
-            
+
+
         }
 
-        public static async Task<string> Upload(byte[] image)
-        {
-            using (var client = new HttpClient())
-            {
-                using (var content =
-                    new MultipartFormDataContent("Upload----" + DateTime.Now.ToString(CultureInfo.InvariantCulture)))
-                {
-                    content.Add(new StreamContent(new MemoryStream(image)), "bilddatei", "upload.jpg");
-
-                    using (
-                       var message =
-                           await client.PostAsync("http://www.directupload.net/index.php?mode=upload", content))
-                    {
-                        var input = await message.Content.ReadAsStringAsync();
-
-                        return !string.IsNullOrWhiteSpace(input) ? Regex.Match(input, @"http://\w*\.directupload\.net/images/\d*/\w*\.[a-z]{3}").Value : null;
-                    }
-                }
-            }
-        }
-
-        
-
-
-        
-
-        public static void captureComplain()
-        {
-            
-        }
-        
     }
 }
-

@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="cleanIndia.UserHome"
+    x:Class="cleanIndia.AgencyHome"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:cleanIndia"
@@ -8,10 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    	<AppBarButton HorizontalAlignment="Left" Height="108" Icon="Map" Click="MapView_Click" Label="Show Map" Margin="158,560,0,0" VerticalAlignment="Top" Width="108"/>
-    	<AppBarButton HorizontalAlignment="Left" Height="146" Icon="Add" Click="AddComplaint_Click" Label="Add Complaint" Margin="332,564,0,0" VerticalAlignment="Top" Width="146"/>
-    	<AppBarButton HorizontalAlignment="Left" Height="136" Icon="Go" Label="Logout" Margin="548,556,0,0" VerticalAlignment="Top" Width="154"/>
-        <ListView x:Name="myComplaints_ListView" IsItemClickEnabled="True" HorizontalAlignment="Left" Height="530" Margin="120,10,0,0" VerticalAlignment="Top" Width="684">
+        <AppBarButton Click="MapView_Click" HorizontalAlignment="Left" Height="108" Icon="Map" Label="View Map" Margin="1227,456,0,0" VerticalAlignment="Top" Width="129"/>
+        <AppBarButton HorizontalAlignment="Left" Height="108" Icon="Go" Label="Logout" Margin="1224,615,0,0" VerticalAlignment="Top" Width="142"/>
+        <ListView x:Name="myComplaints_ListView" IsItemClickEnabled="True" HorizontalAlignment="Left" Height="635" Margin="120,10,0,0" VerticalAlignment="Top" Width="834">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

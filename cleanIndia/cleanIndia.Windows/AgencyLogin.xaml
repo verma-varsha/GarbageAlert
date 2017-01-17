@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="cleanIndia.AgencyLogin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:cleanIndia"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox x:Name="email" HorizontalAlignment="Left" Height="48" Margin="225,87,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="594"/>
+        <PasswordBox x:Name="pass" HorizontalAlignment="Left" Height="51" Margin="225,201,0,0" VerticalAlignment="Top" Width="594"/>
+        <Button Content="Login" Click="AgencyLogin_Click" HorizontalAlignment="Left" Height="66" Margin="288,360,0,0" VerticalAlignment="Top" Width="408"/>
+        <HyperlinkButton Content="Create an account." Click="AgencyRegLink_Click" HorizontalAlignment="Left" Height="72" Margin="264,507,0,0" VerticalAlignment="Top" Width="480"/>
+
+    </Grid>
+</Page>
