@@ -64,6 +64,9 @@ namespace cleanIndia
             await encoder.FlushAsync();
             img.Source = writeableBitmap;
             Debug.WriteLine(pixelStream.Length);
+            Geolocator gl = new Geolocator();
+            Geoposition gp = await gl.GetGeopositionAsync();
+            await Registration.Upload(pixels, (App.Current as App).GEmail, gp.Coordinate.Latitude.ToString(),gp.Coordinate.Longitude.ToString(), ComplaintTitle.Text);
         }
 
         private async void SubmitComplaint_Click(object sender, RoutedEventArgs e)

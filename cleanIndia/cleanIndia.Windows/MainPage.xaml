@@ -8,11 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="email" HorizontalAlignment="Left" PlaceholderText="Email" Margin="46,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="105" Width="392"/>
-        <Button Content="Login" HorizontalAlignment="Left"  Margin="370,498,0,0" VerticalAlignment="Top" Height="55" Width="388" Click="LoginButton_Click"/>
-        <HyperlinkButton Content="Create Account" HorizontalAlignment="Left" Height="79" Margin="352,621,0,0" VerticalAlignment="Top" Width="403" Click="HyperlinkButton_Click"/>
-        <PasswordBox x:Name="pass" HorizontalAlignment="Left" Height="75" Margin="58,294,0,0" VerticalAlignment="Top" Width="380"/>
-        <HyperlinkButton Content="Agency? Click Here." Click="AgencyLink_Click" HorizontalAlignment="Left" Height="114" Margin="658,306,0,0" VerticalAlignment="Top" Width="262"/>
+        <TextBox x:Name="email" PlaceholderText="Your Email Address." HorizontalAlignment="Left" Margin="373,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="436"/>
+        <Button Content="Login" HorizontalAlignment="Left"  Margin="397,360,0,0" VerticalAlignment="Top" Height="55" Width="388" Click="LoginButton_Click"/>
+        <HyperlinkButton Content="Create Account" HorizontalAlignment="Left" Height="79" Margin="396,603,0,0" VerticalAlignment="Top" Width="403" Click="HyperlinkButton_Click"/>
+        <PasswordBox x:Name="pass" HorizontalAlignment="Left" PlaceholderText="Your Password" Height="35" Margin="375,240,0,0" VerticalAlignment="Top" Width="434"/>
+        <HyperlinkButton Content="Agency? Click Here." Click="AgencyLink_Click" HorizontalAlignment="Left" Height="114" Margin="466,471,0,0" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.489,0.5"/>
 
     </Grid>
 </Page>

@@ -52,6 +52,10 @@ namespace cleanIndia
         private void OpenInfobox(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
             Pushpin pin = sender as Pushpin;
+            //(App.Current as App).GLatitude=pin.
+            Location a = MapLayer.GetPosition(pin);
+            (App.Current as App).GLatitude = a.Latitude;
+            (App.Current as App).GLongitude = a.Longitude;
             Infobox.DataContext = pin.Tag;
             InfoboxLayer.Visibility = Visibility.Visible;
             MapLayer.SetPosition(Infobox, MapLayer.GetPosition(pin));
@@ -148,9 +152,54 @@ namespace cleanIndia
             }
         }
 
-        private void PickComplaint_Click(object sender, RoutedEventArgs e)
+        private async void PickComplaint_Click(object sender, RoutedEventArgs e)
         {
-        
+            string url = "http://immense-cliffs-95646.herokuapp.com/api/myComplain/";
+            JsonObject j = await myComplain(url, (App.Current as App).GLatitude.ToString(), (App.Current as App).GLongitude.ToString(), (App.Current as App).GEmail);
+            if (j.GetNamedNumber("status") == 1)
+            {
+                var d = new MessageDialog("Buck up! Time to do the job.");
+                await d.ShowAsync();
+            }
+            else
+            {
+                var d = new MessageDialog("Error in Connection. Try Again.");
+                await d.ShowAsync();
+            }
+        }
+
+        private async static Task<JsonObject> myComplain(string url, string latitude, string longitude, string email)
+        {
+            IEnumerable<KeyValuePair<string, string>> emails = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string,string>("email",email),
+                new KeyValuePair<string,string>("latitude",latitude),
+                new KeyValuePair<string,string>("longitude",longitude)
+                
+            };
+            HttpContent q = new FormUrlEncodedContent(emails);
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "x-www-form-urlencoded");
+                using (HttpResponseMessage response = await client.PostAsync(url, q))
+                {
+                    using (HttpContent content = response.Content)
+                    {
+                        string mycontent = await content.ReadAsStringAsync();
+                        JsonObject dataJson = JsonObject.Parse(mycontent);
+                        Debug.WriteLine(dataJson);
+                        return dataJson;
+                    }
+
+
+                }
+
+            }
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AgencyHome));
         }
     }
 }

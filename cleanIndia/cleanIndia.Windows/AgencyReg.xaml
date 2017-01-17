@@ -13,6 +13,7 @@
         <TextBox x:Name="phone" HorizontalAlignment="Left" Height="81" Margin="141,345,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="534"/>
         <PasswordBox x:Name="password" HorizontalAlignment="Left" Height="48" Margin="141,504,0,0" VerticalAlignment="Top" Width="534"/>
         <Button Content="Register" Click="AgencyReg_Click" HorizontalAlignment="Left" Height="66" Margin="243,618,0,0" VerticalAlignment="Top" Width="345"/>
+        <TextBlock HorizontalAlignment="Left" Height="273" Margin="879,72,0,0" TextWrapping="Wrap" Text="Agency Registration" VerticalAlignment="Top" Width="402" FontSize="72"/>
 
     </Grid>
 </Page>

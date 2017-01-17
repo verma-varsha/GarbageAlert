@@ -27,5 +27,14 @@ namespace cleanIndia
         {
             this.Frame.Navigate(typeof(AgencyMapView));
         }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            (App.Current as App).GEmail = "";
+            (App.Current as App).GPhone="";
+            (App.Current as App).GName = "";
+            this.Frame.Navigate(typeof(MainPage));
+
+        }
     }
 }

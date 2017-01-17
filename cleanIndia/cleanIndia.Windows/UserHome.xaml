@@ -8,10 +8,10 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    	<AppBarButton HorizontalAlignment="Left" Height="108" Icon="Map" Click="MapView_Click" Label="Show Map" Margin="158,560,0,0" VerticalAlignment="Top" Width="108"/>
-    	<AppBarButton HorizontalAlignment="Left" Height="146" Icon="Add" Click="AddComplaint_Click" Label="Add Complaint" Margin="332,564,0,0" VerticalAlignment="Top" Width="146"/>
-    	<AppBarButton HorizontalAlignment="Left" Height="136" Icon="Go" Label="Logout" Margin="548,556,0,0" VerticalAlignment="Top" Width="154"/>
-        <ListView x:Name="myComplaints_ListView" IsItemClickEnabled="True" HorizontalAlignment="Left" Height="530" Margin="120,10,0,0" VerticalAlignment="Top" Width="684">
+    	<AppBarButton HorizontalAlignment="Left" Height="108" Icon="Map" Click="MapView_Click" Label="Show Map" Margin="1165,534,0,0" VerticalAlignment="Top" Width="108"/>
+    	<AppBarButton HorizontalAlignment="Left" Height="146" Icon="Add" Click="AddComplaint_Click" Label="Add Complaint" Margin="1146,329,0,0" VerticalAlignment="Top" Width="146"/>
+    	<AppBarButton HorizontalAlignment="Left" Click="Logout_Click" Height="136" Icon="Go" Label="Logout" Margin="1142,122,0,0" VerticalAlignment="Top" Width="154"/>
+        <ListView x:Name="myComplaints_ListView" IsItemClickEnabled="True" HorizontalAlignment="Left" Height="530" Margin="180,136,0,0" VerticalAlignment="Top" Width="684">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -20,6 +20,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <TextBlock HorizontalAlignment="Left" Height="57" Margin="156,24,0,0" TextWrapping="Wrap" Text="My Complaints" VerticalAlignment="Top" Width="630" FontSize="48"/>
 
     </Grid>
 </Page>

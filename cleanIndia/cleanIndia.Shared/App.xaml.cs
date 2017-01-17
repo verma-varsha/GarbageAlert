@@ -43,6 +43,8 @@ namespace cleanIndia
         public string GName;
         public string GEmail;
         public string GPhone;
+        public double GLatitude;
+        public double GLongitude;
 #if WINDOWS_PHONE_APP
         private TransitionCollection transitions;
 #endif

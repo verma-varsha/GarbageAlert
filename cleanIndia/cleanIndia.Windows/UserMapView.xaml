@@ -10,7 +10,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <m:Map Name="MyMap" MapType="Aerial" ZoomLevel="100" Credentials="sn7DP77qsOS0Mi9So3VQ~O73uEH6wpQD4TKXx-HKLoQ~AmfbbUBiMm7EFcVYbPriZmzJNagcv7TPkUpe-dZCypxItHA4IdIxcGNM2BOEINM_">
+        <m:Map Name="MyMap" MapType="Aerial" ZoomLevel="100" Credentials="sn7DP77qsOS0Mi9So3VQ~O73uEH6wpQD4TKXx-HKLoQ~AmfbbUBiMm7EFcVYbPriZmzJNagcv7TPkUpe-dZCypxItHA4IdIxcGNM2BOEINM_" Margin="0,0,129,0">
             <m:Map.Children>
                 <m:MapLayer Name="DataLayer"/>
                 <m:MapLayer Name="InfoboxLayer" Visibility="Collapsed">
@@ -28,5 +28,6 @@
                 </m:MapLayer>
             </m:Map.Children>
         </m:Map>
+        <AppBarButton HorizontalAlignment="Left" Click="Back_Click" Height="108" Icon="Back" Label="Back" Margin="1263,603,0,0" VerticalAlignment="Top" Width="93"/>
     </Grid>
 </Page>

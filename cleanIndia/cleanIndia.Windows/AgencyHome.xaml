@@ -9,16 +9,17 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <AppBarButton Click="MapView_Click" HorizontalAlignment="Left" Height="108" Icon="Map" Label="View Map" Margin="1227,456,0,0" VerticalAlignment="Top" Width="129"/>
-        <AppBarButton HorizontalAlignment="Left" Height="108" Icon="Go" Label="Logout" Margin="1224,615,0,0" VerticalAlignment="Top" Width="142"/>
-        <ListView x:Name="myComplaints_ListView" IsItemClickEnabled="True" HorizontalAlignment="Left" Height="635" Margin="120,10,0,0" VerticalAlignment="Top" Width="834">
+        <AppBarButton HorizontalAlignment="Left" Click="Logout_Click" Height="108" Icon="Go" Label="Logout" Margin="1224,615,0,0" VerticalAlignment="Top" Width="142"/>
+        <ListView x:Name="myComplaints_ListView" IsItemClickEnabled="True" HorizontalAlignment="Left" Height="521" Margin="132,208,0,0" VerticalAlignment="Top" Width="855">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock FontSize="25" Text="{Binding DateOfComplaint}"/>
+                        <TextBlock FontSize="25" Text="{Binding ComplaintName}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <TextBlock HorizontalAlignment="Left" Height="63" Margin="99,33,0,0" TextWrapping="Wrap" Text="Complaints List" VerticalAlignment="Top" Width="714" FontSize="48"/>
 
     </Grid>
 </Page>

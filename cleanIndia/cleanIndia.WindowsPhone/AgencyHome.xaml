@@ -19,7 +19,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock FontSize="25" Text="{Binding DateOfComplaint}"/>
+                        <TextBlock FontSize="25" Text="{Binding ComplaintName}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -12,7 +12,7 @@
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">My Application</x:String>
+        <x:String x:Key="AppName">GarbageAlert</x:String>
     </Page.Resources>
 
     <!--
@@ -47,12 +47,11 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
 
         </Grid>
-        <TextBox x:Name="uname" HorizontalAlignment="Left" Height="88" Margin="296,90,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="426"/>
-        <TextBox x:Name="email" HorizontalAlignment="Left" Height="52" Margin="352,228,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="406"/>
-        <TextBox x:Name="phone" HorizontalAlignment="Left" Height="66" Margin="296,320,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="550"/>
-        <Button Content="Register" HorizontalAlignment="Left" Height="78" Margin="296,520,0,0" Grid.Row="1" VerticalAlignment="Top" Width="426" Click="RegisterButton_Click"/>
-        <PasswordBox x:Name="password" HorizontalAlignment="Left" Margin="296,391,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="513"/>
-        <TextBlock x:Name="test" HorizontalAlignment="Left" Margin="840,28,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="185" Width="271"/>
+        <TextBox x:Name="uname" HorizontalAlignment="Left" Height="43" Margin="254,10,0,0" Grid.Row="1" TextWrapping="Wrap"  PlaceholderText="Your Name" VerticalAlignment="Top" Width="504"/>
+        <TextBox x:Name="email" HorizontalAlignment="Left" Height="40" Margin="254,105,0,0" Grid.Row="1" TextWrapping="Wrap" PlaceholderText="Your Email Address" VerticalAlignment="Top" Width="504"/>
+        <TextBox x:Name="phone" HorizontalAlignment="Left" Height="36" Margin="254,212,0,0" Grid.Row="1" TextWrapping="Wrap" PlaceholderText="Your Phone Number" VerticalAlignment="Top" Width="504"/>
+        <Button Content="Register" HorizontalAlignment="Left" Height="78" Margin="296,520,0,0" Grid.Row="1" VerticalAlignment="Top"  Width="426" Click="RegisterButton_Click"/>
+        <PasswordBox x:Name="password" PlaceholderText="Your Password" HorizontalAlignment="Left" Margin="254,316,0,0" Grid.Row="1" VerticalAlignment="Top" Height="41" Width="504"/>
 
     </Grid>
 </Page>
