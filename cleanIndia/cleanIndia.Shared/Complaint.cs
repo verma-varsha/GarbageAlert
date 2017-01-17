@@ -6,6 +6,7 @@ namespace cleanIndia
 {
     class Complaint
     {
+        public double status { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public string ComplaintName { get; set; }

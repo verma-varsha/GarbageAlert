@@ -118,6 +118,7 @@ namespace cleanIndia
                     c1.FinalImageURI = x.finalImage;
                     c1.AgencyName = x.agency;
                     c1.UserName = x.user;
+                    c1.status=x.status;
                     cl.Add(c1);
                 }
                 foreach (Complaint a in cl)
@@ -125,8 +126,16 @@ namespace cleanIndia
                     Location l = new Location(a.Latitude, a.Longitude);
                     Pushpin p = new Pushpin();
                     p.Text = a.UserName;
-                    p.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Red);
-                    p.Tag = a;
+                    //p.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Red);
+                    if(a.status==0)
+                    {
+                        p.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Red);
+                    }
+                    else
+                    {
+                        p.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.Green);
+                    }
+                        p.Tag = a;
                     MapLayer.SetPosition(p, l);
                     p.Tapped += OpenInfobox;
                     DataLayer.Children.Add(p);
